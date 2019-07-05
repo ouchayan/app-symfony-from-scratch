@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    AppBundle\Task\TaskManager:
+        public: true
+
+    AppBundle\Task\TaskService:
+        public: true

@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * User
@@ -19,6 +20,7 @@ class User
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"list"})
      */
     private $id;
 
@@ -26,6 +28,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="firstName", type="string", length=255)
+     * @Serializer\Groups({"detail", "list"})
      */
     private $firstName;
 
@@ -33,6 +36,7 @@ class User
      * @var string
      *
      * @ORM\Column(name="lastName", type="string", length=255)
+     * @Serializer\Groups({"list"})
      */
     private $lastName;
 
@@ -40,6 +44,7 @@ class User
      * @var int
      *
      * @ORM\Column(name="age", type="integer")
+     * @Serializer\Groups({"list"})
      */
     private $age;
 
@@ -47,6 +52,7 @@ class User
      * @var \DateTime
      *
      * @ORM\Column(name="birthDate", type="datetime")
+     * @Serializer\Groups({"list"})
      */
     private $birthDate;
 

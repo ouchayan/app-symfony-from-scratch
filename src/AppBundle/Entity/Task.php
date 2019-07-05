@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Task
  *
  * @ORM\Table(name="task")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Entity\TaskRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TaskRepository")
  */
 class Task
 {
@@ -18,6 +19,7 @@ class Task
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"list"})
      */
     private $id;
 
@@ -25,6 +27,7 @@ class Task
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     * @Serializer\Groups({"list"})
      */
     private $title;
 
@@ -32,6 +35,7 @@ class Task
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Serializer\Groups({"list"})
      */
     private $description;
 
@@ -39,6 +43,7 @@ class Task
      * @var \DateTime
      *
      * @ORM\Column(name="createdDate", type="datetime")
+     * @Serializer\Groups({"list"})
      */
     private $createdDate;
 
@@ -46,6 +51,7 @@ class Task
      * @var \DateTime
      *
      * @ORM\Column(name="updatedDate", type="datetime")
+     * @Serializer\Groups({"list"})
      */
     private $updatedDate;
 
@@ -53,6 +59,7 @@ class Task
      * @var string
      *
      * @ORM\Column(name="status", type="string", length=50)
+     * @Serializer\Groups({"list"})
      */
     private $status;
 
